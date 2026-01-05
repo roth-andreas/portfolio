@@ -4,7 +4,7 @@ A modern, responsive personal portfolio website showcasing my career as a AI Eng
 This project features a high-performance timeline, interactive project cards, and a citation-ready research section.
 
 ## Hosted Live
-[Click here to view the published site](#) **
+[Click here to view the published site](https://home-5019331992.app-ionos.space/)
 
 ## Technology Stack
 
