@@ -2,8 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import InteractiveGrid from './InteractiveGrid';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero = () => {
+    const { t } = useLanguage();
+
     return (
         <header className="hero" id="hero">
             <div className="hero-background">
@@ -29,25 +32,14 @@ const Hero = () => {
             </div>
 
             <div className="hero-content">
-                {/* <motion.div
-                    className="hero-badge"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <span className="badge-dot"></span>
-                    Dr. rer. nat. Informatik | Summa Cum Laude
-                </motion.div>
-                */}
-
                 <motion.h1
                     className="hero-title"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
                 >
-                    <span className="title-line">AI Engineer</span>
-                    <span className="title-line gradient-text">& Researcher</span>
+                    <span className="title-line">{t('hero.role_line1')}</span>
+                    <span className="title-line gradient-text">{t('hero.role_line2')}</span>
                 </motion.h1>
 
                 <motion.p
@@ -56,7 +48,7 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                    Ich entwickle robuste Software-Systeme und bringe tiefes, international anerkanntes Expertenwissen in modernen Machine-Learning-Methoden ein. Mit dieser Kombination möchte ich KI von der Theorie in wirkungsvolle Produkte überführen und damit messbaren Impact schaffen.
+                    {t('hero.subtitle')}
                 </motion.p>
 
                 <motion.div
@@ -66,11 +58,11 @@ const Hero = () => {
                     transition={{ duration: 0.5, delay: 0.3 }}
                 >
                     <a href="#contact" className="btn btn-primary">
-                        Kontakt aufnehmen
+                        {t('hero.cta_primary')}
                         <ArrowRight size={20} />
                     </a>
                     <a href="#projects" className="btn btn-secondary">
-                        Projekte ansehen
+                        {t('hero.cta_secondary')}
                     </a>
                 </motion.div>
 
@@ -81,18 +73,18 @@ const Hero = () => {
                     transition={{ duration: 1, delay: 0.5 }}
                 >
                     <div className="stat">
-                        <span className="stat-number">Dr. rer. nat.</span>
-                        <span className="stat-label">Promotion · Nov 2025</span>
+                        <span className="stat-number">{t('hero.stats.phd')}</span>
+                        <span className="stat-label">{t('hero.stats.phd_date')}</span>
                     </div>
                     <div className="stat-divider"></div>
                     <div className="stat">
-                        <span className="stat-number">Machine Learning & AI</span>
-                        <span className="stat-label">Internationale Expertise</span>
+                        <span className="stat-number">{t('hero.stats.expertise')}</span>
+                        <span className="stat-label">{t('hero.stats.expertise_sub')}</span>
                     </div>
                     <div className="stat-divider"></div>
                     <div className="stat">
-                        <span className="stat-number">Full-Stack</span>
-                        <span className="stat-label">Software-Engineering</span>
+                        <span className="stat-number">{t('hero.stats.role')}</span>
+                        <span className="stat-label">{t('hero.stats.role_sub')}</span>
                     </div>
                 </motion.div>
             </div>

@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Calendar, BookOpen } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Research = () => {
+    const { t } = useLanguage();
+
     const allPubs = [
         {
             year: '2025',
@@ -20,7 +23,7 @@ const Research = () => {
         },
         {
             year: '2024',
-            title: 'Preventing representational rank collapse in mpnns by splitting the computational graph',
+            title: 'Preventing Representational Rank Collapse in MPNNs by Splitting the Computational Graph',
             authors: 'Andreas Roth, Franka Bause, Nils M. Kriege and Thomas Liebig',
             venue: 'Learning on Graphs Conference (LoG 2024)',
             link: 'https://proceedings.mlr.press/v231/roth24a.html'
@@ -69,7 +72,7 @@ const Research = () => {
         },
         {
             year: '2021',
-            title: 'A data-centric augmentation approach for disturbed sensor image segmentation',
+            title: 'A Data-Centric Augmentation Approach for Disturbed Sensor Image Segmentation',
             authors: 'Andreas Roth, Konstantin Wüstefeld and Frank Weichert',
             venue: 'Journal of Imaging',
             link: 'https://www.mdpi.com/2313-433X/7/10/206'
@@ -81,7 +84,7 @@ const Research = () => {
             <div className="container">
                 <div className="section-header">
 
-                    <h2 className="section-title">Veröffentlichungen</h2>
+                    <h2 className="section-title">{t('research.title')}</h2>
                 </div>
 
                 <div className="research-featured">
@@ -92,10 +95,10 @@ const Research = () => {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <div className="featured-badge">Dissertation</div>
-                        <h3>Towards Understanding and Avoiding Limitations of Convolutions on Graphs</h3>
+                        <div className="featured-badge">{t('research.featured_badge')}</div>
+                        <h3>{t('research.featured_title')}</h3>
                         <p className="featured-description">
-                            In meiner Dissertation habe ich grundlegende Limitierungen moderner Graph Neural Networks analysiert, die ihren Einsatz in realen Anwendungen wie Empfehlungssystemen oder relationalen Daten erschweren. Aufbauend auf einer theoretischen Analyse zentraler Ursachen habe ich allgemeine Modell-Frameworks entwickelt, die diese Schwächen gezielt adressieren. Meine Arbeit verbindet fundiertes Modellverständnis mit praktikablen Prinzipien für robuste KI auf komplexen, graphstrukturierten Daten.
+                            {t('research.featured_desc')}
                         </p>
                         <div className="featured-meta">
                             <span className="meta-item">
@@ -104,14 +107,14 @@ const Research = () => {
                             </span>
                             <a href="https://eldorado.tu-dortmund.de/items/f448d6a5-f945-40f5-9c4c-d79958688fb8" className="btn btn-outline" style={{ padding: '0.4rem 0.8rem', fontSize: '0.85rem' }}>
                                 <BookOpen size={16} />
-                                Arbeit ansehen
+                                {t('research.view_thesis')}
                             </a>
                         </div>
                     </motion.div>
                 </div>
 
                 <div className="publications-list">
-                    <h4 className="list-title">Weitere Veröffentlichungen</h4>
+                    <h4 className="list-title">{t('research.more_pubs')}</h4>
                     {allPubs.map((pub, index) => (
                         <motion.div
                             key={index}

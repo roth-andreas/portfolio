@@ -1,18 +1,20 @@
 import React from 'react';
 import { Mail, Linkedin, Github, Globe } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Contact = () => {
+    const { t } = useLanguage();
+
     return (
         <section className="section contact" id="contact">
             <div className="container">
                 <div className="contact-content">
                     <div className="section-header">
 
-                        <h2 className="section-title">Kontakt</h2>
+                        <h2 className="section-title">{t('contact.title')}</h2>
                     </div>
                     <p className="contact-text">
-                        Ich suche nach spannenden Herausforderungen um innovative KI-Projekte zu identifizieren und umzusetzen. Egal ob es um Machine Learning, GenAI oder skalierbare
-                        ML-Pipelines geht – ich freue mich auf den Austausch.
+                        {t('contact.text')}
                     </p>
                     <div className="contact-links">
                         <a href="mailto:andreas52.roth@gmail.com" className="contact-link">

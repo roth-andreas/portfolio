@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Terminal } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,11 +16,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Über mich', href: '#about' },
-    { name: 'Projekte', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Veröffentlichungen', href: '#research' },
-    { name: 'Kontakt', href: '#contact' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.projects'), href: '#projects' },
+    { name: t('nav.skills'), href: '#skills' },
+    { name: t('nav.research'), href: '#research' },
+    { name: t('nav.contact'), href: '#contact' },
   ];
 
   return (
@@ -28,27 +30,35 @@ const Navbar = () => {
           <span className="logo-text">Andreas Roth</span>
         </a>
 
-        <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-          {navLinks.map((link) => (
-            <li key={link.name}>
-              <a
-                href={link.href}
-                className="nav-link"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="nav-actions">
+          {/* Desktop Menu */}
+          <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+            {navLinks.map((link) => (
+              <li key={link.href}> {/* Use href as key since name changes */}
+                <a
+                  href={link.href}
+                  className="nav-link"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-        <button
-          className="nav-toggle"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          <button onClick={toggleLanguage} className="lang-toggle" aria-label="Toggle Language">
+            <Globe size={18} />
+            <span>{language.toUpperCase()}</span>
+          </button>
+
+          <button
+            className="nav-toggle"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
     </nav>
   );

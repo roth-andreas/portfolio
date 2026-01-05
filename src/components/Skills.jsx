@@ -1,6 +1,9 @@
 import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Skills = () => {
+    const { t } = useLanguage();
+
     const skillGroups = [
         {
             category: 'Modern AI & Machine Learning',
@@ -21,7 +24,7 @@ const Skills = () => {
             <div className="container">
                 <div className="section-header">
 
-                    <h2 className="section-title">Skills & Technologien</h2>
+                    <h2 className="section-title">{t('skills.title')}</h2>
                 </div>
 
                 <div className="skills-grid">

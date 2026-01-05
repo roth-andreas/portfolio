@@ -1,14 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Timeline from './Timeline';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const About = () => {
+    const { t } = useLanguage();
+
     return (
         <section className="section about" id="about">
             <div className="container">
                 <div className="section-header">
 
-                    <h2 className="section-title">Über mich</h2>
+                    <h2 className="section-title">{t('about.title')}</h2>
                 </div>
 
                 <motion.div
@@ -27,16 +30,12 @@ const About = () => {
                         </div>
                         <div className="about-bio-text">
                             <p className="lead">
-                                AI Engineer, der aktuelle Entwicklungen bei KI tiefgehend versteht und in skalierbare, produktionsreife Systeme übersetzt.
+                                {t('about.lead')}
                             </p>
                             <p>
-                                Basierend auf meiner Promotion im Bereich KI verfüge ich über ein tiefgehendes Verständnis der algorithmischen und mathematischen Grundlagen moderner KI-Verfahren. Mein Anspruch ist es, diese Expertise in robuste KI-Produkte zu überführen, die messbaren Mehrwert liefern.
+                                {t('about.p1')}
                             </p>
-                            <p>
-                                Bereits während meiner Tätigkeit als studentischer Softwareentwickler bei <strong>Drigus Systeme GmbH</strong> in der Anwendungsentwicklung sowie beim <strong>Fraunhofer ISST</strong> in der Full-Stack-Entwicklung arbeitete ich an der Umsetzung komplexer Softwaresysteme – von der Datenverarbeitung über Backend- und Frontend-Entwicklung bis hin zur App- und Embedded-Entwicklung.
-                                Ein besonderer Schwerpunkt lag dabei auf der Containerisierung und dem Betrieb von Microservices.
-                                Diese Kombination aus algorithmischer Tiefe und fundierter Software-Engineering-Erfahrung ermöglicht es mir, KI-Systeme zu entwerfen, die skalierbar, wartbar und langfristig einsetzbar sind.
-                            </p>
+                            <p dangerouslySetInnerHTML={{ __html: t('about.p2') }}></p>
                         </div>
                     </div>
 
