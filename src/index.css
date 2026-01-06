@@ -764,6 +764,10 @@ h6 {
 
 .pub-content {
   flex-grow: 1;
+  min-width: 0;
+  /* Fix flexbox overflow */
+  overflow: hidden;
+  /* Ensure children respect boundaries */
 }
 
 .pub-content h5 {
@@ -773,6 +777,8 @@ h6 {
   margin-bottom: 0;
   /* No margin */
   line-height: 1.25;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .pub-authors {
@@ -784,7 +790,7 @@ h6 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 600px;
+  max-width: 100%;
   /* Truncate authors if too long */
 }
 
@@ -794,6 +800,8 @@ h6 {
   color: var(--text-tertiary);
   font-style: italic;
   line-height: 1.2;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .pub-link {
@@ -1312,8 +1320,9 @@ h6 {
   line-height: 1.25;
   margin-bottom: 2px;
   color: var(--text-primary);
-  white-space: normal;
-  /* Allow wrap */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: 500;
 }
 
@@ -1321,9 +1330,17 @@ h6 {
   font-size: 0.75rem;
   color: var(--text-secondary);
   line-height: 1.2;
-  white-space: normal;
-  /* Allow wrap */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   opacity: 0.9;
+}
+
+/* Show full text on hover */
+.timeline-range:hover .range-bubble h4,
+.timeline-range:hover .range-bubble p {
+  white-space: normal;
+  overflow: visible;
 }
 
 .bubble-badge {
@@ -1385,11 +1402,13 @@ h6 {
   .range-bubble {
     border-left-width: 4px;
   }
-}
 
-.range-bubble h4,
-.range-bubble p {
-  white-space: normal;
+  /* On mobile, allow text to wrap normally */
+  .range-bubble h4,
+  .range-bubble p {
+    white-space: normal !important;
+    overflow: visible !important;
+  }
 }
 
 /* ========================================
