@@ -17,7 +17,7 @@ export const translations = {
                 phd: "Dr. rer. nat.",
                 phd_date: "Nov 2025",
                 expertise: "Machine Learning & AI",
-                expertise_sub: "Internationale anerkannte Expertise",
+                expertise_sub: "International anerkannte Expertise",
                 role: "Full-Stack",
                 role_sub: "Software-Engineering"
             },
