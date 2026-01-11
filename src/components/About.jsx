@@ -1,10 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Download } from 'lucide-react';
 import Timeline from './Timeline';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const About = () => {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
+
+    // Select CV file based on current language
+    const cvFile = language === 'de' ? '/cv-de.pdf' : '/cv-en.pdf';
 
     return (
         <section className="section about" id="about">
@@ -27,6 +31,11 @@ const About = () => {
                                 <img src="/andreasroth.jpg" alt="Dr. Andreas Roth" className="profile-image" />
                                 <div className="image-border"></div>
                             </div>
+
+                            <a href={cvFile} download className="btn-cv-download">
+                                <Download size={18} />
+                                {t('about.download_cv')}
+                            </a>
                         </div>
                         <div className="about-bio-text">
                             <p className="lead">
