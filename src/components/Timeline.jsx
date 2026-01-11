@@ -4,7 +4,7 @@ import { GraduationCap, Briefcase } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Timeline = () => {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
 
     // Data with precise months (1-based: 1=Jan, 10=Oct)
     const education = t('timeline.education') || [];
@@ -25,12 +25,12 @@ const Timeline = () => {
 
     const formatDate = (dateObj) => {
         if (!dateObj) return t('timeline.today');
-        const months = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'];
-        // Use English months if language is english? Or just simple numeric?
-        // Let's keep strict german months for now or use numeric to be safe
-        // Or better: map month index to localized string. 
-        // For simplicity, keeping the array but maybe I should have translated months too.
-        // Actually, let's just stick to the current implementation for months as user didn't request deep date localization.
+
+        // Language-specific month abbreviations
+        const monthsDE = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'];
+        const monthsEN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+        const months = language === 'de' ? monthsDE : monthsEN;
         return `${months[dateObj.month - 1]} ${dateObj.year}`;
     };
 
