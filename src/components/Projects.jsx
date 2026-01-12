@@ -100,6 +100,20 @@ const Projects = () => {
                                 </div>
                                 <h3 className="project-title-area">{project.title}</h3>
                                 <p className="project-description-area">{project.description}</p>
+                                {project.repoUrl && (
+                                    <div className="project-actions" style={{ marginTop: '1rem' }}>
+                                        <a
+                                            href={project.repoUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="btn btn-sm btn-outline"
+                                            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', fontSize: '0.9rem' }}
+                                        >
+                                            <Github size={16} />
+                                            View Code
+                                        </a>
+                                    </div>
+                                )}
                             </div>
                         </motion.article>
                     ))}

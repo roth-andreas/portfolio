@@ -84,7 +84,8 @@ export const translations = {
                     title: 'Production ML Pipeline',
                     description: 'End-to-End Machine Learning System mit MLOps Best Practices. Entwicklung einer entkoppelten REST-API mit FastAPI und Docker, CI/CD-Pipeline mit GitHub Actions sowie Experiment-Tracking mit MLflow.',
                     tags: ['MLOps', 'Docker', 'FastAPI', 'CI/CD'],
-                    imageKey: 'mlops'
+                    imageKey: 'mlops',
+                    repoUrl: 'https://github.com/roth-andreas/ml_pipeline'
                 },
                 {
                     title: 'Anomaly Detection (Bosch)',
@@ -207,7 +208,8 @@ export const translations = {
                     title: 'Production ML Pipeline',
                     description: 'End-to-end machine learning system complying with MLOps best practices. Development of a decoupled REST API with FastAPI and Docker, CI/CD pipeline with GitHub Actions, and experiment tracking using MLflow.',
                     tags: ['MLOps', 'Docker', 'FastAPI', 'CI/CD'],
-                    imageKey: 'mlops'
+                    imageKey: 'mlops',
+                    repoUrl: 'https://github.com/roth-andreas/ml_pipeline'
                 },
                 {
                     title: 'Anomaly Detection (Bosch)',
