@@ -5,6 +5,7 @@ import { Github, ExternalLink, Database, Cpu, Eye } from 'lucide-react';
 import pamonoImage from '../assets/pamono.jpg';
 import bauteilImage from '../assets/bauteil.jpg';
 import logistikImage from '../assets/logistik.jpg';
+import mlopsImage from '../assets/mlops.png';
 
 const Projects = () => {
     const { t } = useLanguage();
@@ -55,7 +56,8 @@ const Projects = () => {
     const imageMap = {
         'bauteil': bauteilImage,
         'logistik': logistikImage,
-        'pamono': pamonoImage
+        'pamono': pamonoImage,
+        'mlops': mlopsImage
     };
 
     const projectsData = t('projects.items') || [];

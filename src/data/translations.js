@@ -81,6 +81,12 @@ export const translations = {
             title: "Projekte",
             items: [
                 {
+                    title: 'Production ML Pipeline',
+                    description: 'End-to-End Machine Learning System mit MLOps Best Practices. Entwicklung einer entkoppelten REST-API mit FastAPI und Docker, CI/CD-Pipeline mit GitHub Actions sowie Experiment-Tracking mit MLflow.',
+                    tags: ['MLOps', 'Docker', 'FastAPI', 'CI/CD'],
+                    imageKey: 'mlops'
+                },
+                {
                     title: 'Anomaly Detection (Bosch)',
                     description: 'Entwicklung eines Verfahrens zur Echtzeit-Fehlererkennung von Bauteilen in der Produktion in Zusammenarbeit mit der Robert Bosch GmbH.',
                     tags: ['Computer Vision', 'Anomaly Detection', 'PyTorch', 'Industrial AI'],
@@ -197,6 +203,12 @@ export const translations = {
         projects: {
             title: "Projects",
             items: [
+                {
+                    title: 'Production ML Pipeline',
+                    description: 'End-to-end machine learning system complying with MLOps best practices. Development of a decoupled REST API with FastAPI and Docker, CI/CD pipeline with GitHub Actions, and experiment tracking using MLflow.',
+                    tags: ['MLOps', 'Docker', 'FastAPI', 'CI/CD'],
+                    imageKey: 'mlops'
+                },
                 {
                     title: 'Anomaly Detection (Bosch)',
                     description: 'Development of a real-time defect detection system for production components in collaboration with Robert Bosch GmbH.',
