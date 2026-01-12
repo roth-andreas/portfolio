@@ -1,4 +1,6 @@
-# Portfolio Website - Andreas Roth
+
+# Portfolio Website
+ - Andreas Roth
 
 A modern, responsive personal portfolio website showcasing my career as a AI Engineer and Researcher. 
 This project features a high-performance timeline, interactive project cards, and a citation-ready research section.
