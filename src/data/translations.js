@@ -81,6 +81,12 @@ export const translations = {
             title: "Projekte",
             items: [
                 {
+                    title: 'Local RAG Knowledge Assistant',
+                    description: 'Datenschutz-fokussierter KI-Chatbot, der komplett lokal läuft (Ollama & Llama 3). Implementiert RAG (Retrieval-Augmented Generation) zur Analyse privater Dokumente. Vollständig containerisiert mit Docker (Ollama, ChromaDB, App).',
+                    tags: ['GenAI', 'RAG', 'Ollama', 'Docker', 'LangChain'],
+                    imageKey: 'localrag'
+                },
+                {
                     title: 'Production ML Pipeline',
                     description: 'End-to-End Machine Learning System mit MLOps Best Practices. Entwicklung einer entkoppelten REST-API mit FastAPI und Docker, CI/CD-Pipeline mit GitHub Actions sowie Experiment-Tracking mit MLflow.',
                     tags: ['MLOps', 'Docker', 'FastAPI', 'CI/CD'],
@@ -204,6 +210,12 @@ export const translations = {
         projects: {
             title: "Projects",
             items: [
+                {
+                    title: 'Local RAG Knowledge Assistant',
+                    description: 'Privacy-first AI chatbot running entirely locally (Ollama & Llama 3). Implements RAG (Retrieval-Augmented Generation) for private document analysis. Fully containerized with Docker (Ollama, ChromaDB, App).',
+                    tags: ['GenAI', 'RAG', 'Ollama', 'Docker', 'LangChain'],
+                    imageKey: 'localrag'
+                },
                 {
                     title: 'Production ML Pipeline',
                     description: 'End-to-end machine learning system complying with MLOps best practices. Development of a decoupled REST API with FastAPI and Docker, CI/CD pipeline with GitHub Actions, and experiment tracking using MLflow.',

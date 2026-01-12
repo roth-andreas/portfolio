@@ -6,6 +6,7 @@ import pamonoImage from '../assets/pamono.jpg';
 import bauteilImage from '../assets/bauteil.jpg';
 import logistikImage from '../assets/logistik.jpg';
 import mlopsImage from '../assets/mlops.png';
+import localragImage from '../assets/localrag.png';
 
 const Projects = () => {
     const { t } = useLanguage();
@@ -57,7 +58,8 @@ const Projects = () => {
         'bauteil': bauteilImage,
         'logistik': logistikImage,
         'pamono': pamonoImage,
-        'mlops': mlopsImage
+        'mlops': mlopsImage,
+        'localrag': localragImage
     };
 
     const projectsData = t('projects.items') || [];
